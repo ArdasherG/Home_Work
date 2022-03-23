@@ -40,13 +40,16 @@ public class Deck {
                 }
             }
         }
-        public BCard returnCardToDeck(int rank, String suit){
+        public void returnCardToDeck(int rank, String suit){
+            boolean bool = false;
             for (BCard card:deck){
-                if(card.){
-
+                if(card.getRank() == rank && card.getSuit().equals(suit)){
+                    bool =true;
+                    break;
                 }
             }
-
+            if(!bool)deck.add(new BCard(rank,suit));
+            else System.out.println("Такая карта уже имеется!");
         }
     }
 
